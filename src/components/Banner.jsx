@@ -4,7 +4,7 @@ import Typed from "react-typed";
 
 const Banner = () => {
   return (
-    <Stack sx={{ display: "flex", alignItems: "center" }}>
+    <Stack sx={{ display: "flex", alignItems: "center", padding: "2em" }}>
       <Stack
         direction="column"
         sx={{

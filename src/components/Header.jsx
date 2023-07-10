@@ -21,28 +21,11 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import logo_black from "../assets/logo-black.png";
 import Dropdown from "./Dropdown";
-
-const servicesMenuItem = [
-  { title: "Consulting", link: "/consulting" },
-  { title: "Web development", link: "/web-development" },
-  { title: "Mobile development", link: "/mobile-development" },
-  { title: "DevOps Engineering", link: "/devops-engineering" },
-  { title: "Graphic design", link: "/graphic-design" },
-  { title: "UI /UX design", link: "/uix-desing" },
-  { title: "Programming Tutoring", link: "/tutoring" },
-];
-
-const industrieMenuItem = [
-  { title: "eWallet", link: "/e-wallet" },
-  { title: "Banking", link: "/banking" },
-  { title: "Real Estate", link: "/real-estate" },
-  { title: "Lending", link: "/lending" },
-  { title: "Donation", link: "/donation" },
-];
+import { industryItem, serviceItem } from "../misc/navItems";
 
 const navItems = [
   {
-    name: <Dropdown name="Services" items={servicesMenuItem} />,
+    name: <Dropdown name="Services" items={serviceItem} />,
     link: "#",
   },
   {
@@ -50,7 +33,7 @@ const navItems = [
     link: "/portfolio",
   },
   {
-    name: <Dropdown name="Industries" items={industrieMenuItem} />,
+    name: <Dropdown name="Industries" items={industryItem} />,
     link: "#",
   },
   {
@@ -60,10 +43,6 @@ const navItems = [
   {
     name: "Why us?",
     link: "/about-us",
-  },
-  {
-    name: "Contact",
-    link: "/contact",
   },
   {
     name: "FAQs",

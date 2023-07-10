@@ -14,7 +14,7 @@ import Footer from "./components/Footer";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import Loading from "./components/Loading";
 const Home = lazy(() => import("./pages/Home"));
-const Contact = lazy(() => import("./pages/Contact"));
+const About = lazy(() => import("./pages/About"));
 
 // to go back to up i have implemented the folloing function
 function ScrollTop(props) {
@@ -63,7 +63,7 @@ function App(props) {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/about" element={<About />} />
         </Routes>
       </Suspense>
       <Footer />

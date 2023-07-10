@@ -1,8 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Carrois+Gothic+SC&family=Cormorant+Garamond:wght@300;500;700&family=Cormorant+Upright:wght@500;700&family=Crimson+Text:wght@400;600;700&family=Josefin+Sans&family=Mukta+Vaani:wght@200;700&family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Carrois+Gothic+SC&family=Cormorant+Garamond:wght@300;500;700&family=Cormorant+Upright:wght@500;700&family=Crimson+Text:wght@400;600;700&family=Josefin+Sans&family=Mukta+Vaani:wght@200;700&family=Staatliches&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Crimson Text", serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* carousel */
+
+.swiper {
+  width: 100%;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+}
+
+.swiper-slide {
+  background-position: center !important;
+  background-size: cover !important;
+  height: 400px !important;
+}
+
+.swiper-slide img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
 }
