@@ -14,6 +14,7 @@ import { Suspense, lazy, useEffect } from "react";
 import Footer from "./components/Footer";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import Loading from "./components/Loading";
+import ScrollToTop from "./components/ScrollToTop";
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const PrivacyPolicy = lazy(() => import("./pages/PolicyPrivacy"));
@@ -61,6 +62,7 @@ function App(props) {
   return (
     <BrowserRouter>
       <CssBaseline />
+      <ScrollToTop />
       <Header />
       <Toolbar id="back-to-top-anchor" />
       <Suspense fallback={<Loading />}>
