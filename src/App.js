@@ -6,6 +6,7 @@ import {
   Toolbar,
   useScrollTrigger,
 } from "@mui/material";
+import { useLocation } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PropTypes from "prop-types";
 import Header from "./components/Header";
@@ -15,6 +16,7 @@ import { KeyboardArrowUp } from "@mui/icons-material";
 import Loading from "./components/Loading";
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
+const PrivacyPolicy = lazy(() => import("./pages/PolicyPrivacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // to go back to up i have implemented the folloing function
@@ -65,6 +67,7 @@ function App(props) {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about-us" element={<About />} />
+          <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route exact path="*" element={<NotFound />} />{" "}
           {/* Add the catch-all route */}
         </Routes>

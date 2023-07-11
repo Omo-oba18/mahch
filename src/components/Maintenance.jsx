@@ -6,7 +6,12 @@ import under_maintenance_img from "../assets/under-maintenance.jpg";
 const Maintenance = () => {
   return (
     <Stack
-      sx={{ display: "flex", justifyContent: "center", alignItems: "middle" }}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "middle",
+        padding: "4em",
+      }}
     >
       <Stack sx={{ padding: "20px", background: "#fff" }}>
         <Typography

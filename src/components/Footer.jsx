@@ -1,7 +1,6 @@
 import {
   Email,
   Facebook,
-  Favorite,
   Google,
   Instagram,
   LinkedIn,
@@ -47,10 +46,10 @@ const Footer = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={8}>
             <Stack
+              direction="column"
               sx={{
                 background: "#F8F8FF",
                 display: "flex",
-                flexDirection: "column",
                 padding: "2em",
                 height: "100%",
                 justifyContent: "center",
@@ -197,6 +196,7 @@ const Footer = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
             <Stack
+              direction="column"
               sx={{
                 background:
                   "url('https://ik.imagekit.io/k0jemnbco/Main_Page_New/Frame_2317502.webp')",
@@ -405,7 +405,7 @@ const Footer = () => {
             </Stack>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <Stack direction="column ">
+            <Stack direction="column">
               <Typography
                 sx={{
                   fontFamily: "Staatliches, cursive",
@@ -555,13 +555,27 @@ const Footer = () => {
         </Grid>
       </Box>
       <Divider />
-      <Typography
-        sx={{ marginTop: "1em", bottom: "0", color: "#000" }}
-        textAlign="Center"
-        fontFamily="Cormorant Upright, serif"
+      <Stack
+        direction="row"
+        sx={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          flexWrap: "wrap",
+          marginTop: "1em",
+        }}
       >
-        Copyright ©2023 All rights reserved | This template is made with{" "}
-      </Typography>
+        <Typography textAlign="center" fontFamily="Cormorant Upright, serif">
+          Copyright ©2023 MACH SOLUTION Inc. All rights reserved
+        </Typography>
+        <Link
+          to="/privacy-policy"
+          fontSize="14px"
+          fontFamily="Josefin Sans, sans-serif"
+        >
+          Privacy Policy
+        </Link>
+      </Stack>
     </Stack>
   );
 };
