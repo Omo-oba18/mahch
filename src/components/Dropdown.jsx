@@ -2,8 +2,11 @@ import React from "react";
 import { Button, Fade, Menu, MenuItem } from "@mui/material";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const DropDown = (props) => {
+  const { t } = useTranslation();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openDrop = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -31,6 +34,7 @@ const DropDown = (props) => {
           alignItems: "center",
           justifyContent: "flex-start",
           width: "100%",
+          fontFamily: "Staatliches, cursive",
         }}
       >
         {props.name}
@@ -52,7 +56,7 @@ const DropDown = (props) => {
             component={Link}
             to={item.link}
           >
-            {item.title}
+            {t(item.title)}
           </MenuItem>
         ))}
       </Menu>

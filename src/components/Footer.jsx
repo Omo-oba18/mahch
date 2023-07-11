@@ -27,9 +27,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { industryItem, serviceItem } from "../misc/navItems";
-import bg_ceo from "../assets/background-ceo.png";
 import ceo_image from "../assets/ceo-professional.png";
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <Stack
       direction="column"
@@ -117,7 +120,7 @@ const Footer = () => {
               </Stack>
               <Stack sx={{ display: "flex" }} direction="row">
                 <FormControl fullWidth sx={{ margin: "1em" }}>
-                  <InputLabel id="industry-label">Age</InputLabel>
+                  <InputLabel id="industry-label">Industry</InputLabel>
                   <Select
                     labelId="industry-label"
                     id="indsutry-simple-select"
@@ -270,7 +273,13 @@ const Footer = () => {
                         fontSize="14px"
                         fontFamily="Josefin Sans, sans-serif"
                       >
-                        omoobaoshoffa@gmail.com
+                        <Link
+                          fontSize="14px"
+                          fontFamily="Josefin Sans, sans-serif"
+                          to="mailto:omoobaoshoffa@gmail.com"
+                        >
+                          omoobaoshoffa@gmail.com
+                        </Link>
                       </Typography>
                     </Stack>
                     <Stack
@@ -329,28 +338,36 @@ const Footer = () => {
               component={Link}
               to="/"
             >
-              <Typography
-                sx={{
-                  fontSize: "24px",
-                  fontFamily: "Carrois Gothic SC, sans-serif",
-                  color: "#6FD56F",
-                  textDecoration: "underline",
-                }}
-              >
-                Mahch
-              </Typography>
               <img src={logo} alt="mahch logo" height="100px" />
-
-              <Typography
+              <Box
                 sx={{
-                  fontSize: "24px",
-                  fontFamily: "Carrois Gothic SC, sans-serif",
-                  color: "#6FD56F",
-                  textDecoration: "underline",
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  flexDirection: "column",
+                  padding: ".5em",
                 }}
               >
-                Solution
-              </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "24px",
+                    fontFamily: "Carrois Gothic SC, sans-serif",
+                    color: "#6FD56F",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Mahch
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "24px",
+                    fontFamily: "Carrois Gothic SC, sans-serif",
+                    color: "#6FD56F",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Solution
+                </Typography>
+              </Box>
             </Stack>
             <Typography
               textAlign="left"
@@ -359,7 +376,7 @@ const Footer = () => {
               fontWeight={700}
               fontFamily="Josefin Sans, sans-serif"
             >
-              Porto-novo Benin Republic
+              Porto-novo, Benin Republic
             </Typography>
             <Stack
               sx={{
@@ -380,51 +397,64 @@ const Footer = () => {
                 fontFamily="Josefin Sans, sans-serif"
                 sx={{ color: "#000" }}
               >
-                Email: mahch.business@gmail.com
+                Email:{" "}
+                <Link to="mailto:mahch.business@gmail.com">
+                  mahch.business@gmail.com
+                </Link>
               </Typography>
             </Stack>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <Typography
-              sx={{
-                fontFamily: "Staatliches, cursive",
-                fontSize: "20px",
-                textTransform: "uppercase",
-                lineHeight: "1.625em",
-              }}
-            >
-              Portfolio
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Staatliches, cursive",
-                fontSize: "20px",
-                lineHeight: "1.4em",
-                textTransform: "capitalize",
-              }}
-            >
-              Blog
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Staatliches, cursive",
-                fontSize: "20px",
-                textTransform: "uppercase",
-                lineHeight: "1.625em",
-              }}
-            >
-              Why us?
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Staatliches, cursive",
-                fontSize: "20px",
-                textTransform: "uppercase",
-                lineHeight: "1.625em",
-              }}
-            >
-              FAQs
-            </Typography>
+            <Stack direction="column ">
+              <Typography
+                sx={{
+                  fontFamily: "Staatliches, cursive",
+                  fontSize: "20px",
+                  textTransform: "uppercase",
+                  lineHeight: "1.625em",
+                }}
+                component={Link}
+                to="/project"
+              >
+                {t("project")}
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Staatliches, cursive",
+                  fontSize: "20px",
+                  lineHeight: "1.4em",
+                  textTransform: "capitalize",
+                }}
+                component={Link}
+                to="/blog"
+              >
+                {t("blog")}
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Staatliches, cursive",
+                  fontSize: "20px",
+                  textTransform: "uppercase",
+                  lineHeight: "1.625em",
+                }}
+                component={Link}
+                to="/about-us"
+              >
+                {t("aboutUs")}
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Staatliches, cursive",
+                  fontSize: "20px",
+                  textTransform: "uppercase",
+                  lineHeight: "1.625em",
+                }}
+                component={Link}
+                to="/faqs"
+              >
+                {t("faqs")}
+              </Typography>
+            </Stack>
             <Stack direction="row" sx={{ marginTop: ".5em" }}>
               <Stack
                 sx={{
@@ -495,6 +525,7 @@ const Footer = () => {
           <Grid item xs={12} sm={6} md={3}>
             {serviceItem.map((item, index) => (
               <Typography
+                key={index}
                 sx={{
                   fontFamily: "Staatliches, cursive",
                   fontSize: "20px",
@@ -502,13 +533,14 @@ const Footer = () => {
                   lineHeight: "1.625em",
                 }}
               >
-                {item.title}
+                {t(item.title)}
               </Typography>
             ))}
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             {industryItem.map((item, index) => (
               <Typography
+                key={index}
                 sx={{
                   fontFamily: "Staatliches, cursive",
                   fontSize: "20px",
@@ -529,8 +561,6 @@ const Footer = () => {
         fontFamily="Cormorant Upright, serif"
       >
         Copyright ©2023 All rights reserved | This template is made with{" "}
-        <Favorite sx={{ color: "#6fd56f" }} /> by{" "}
-        <Link style={{ textDecoration: "none", color: "#000" }}>Omo Oba</Link>
       </Typography>
     </Stack>
   );

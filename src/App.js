@@ -9,12 +9,13 @@ import {
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PropTypes from "prop-types";
 import Header from "./components/Header";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import Footer from "./components/Footer";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import Loading from "./components/Loading";
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 // to go back to up i have implemented the folloing function
 function ScrollTop(props) {
@@ -63,7 +64,9 @@ function App(props) {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about-us" element={<About />} />
+          <Route exact path="*" element={<NotFound />} />{" "}
+          {/* Add the catch-all route */}
         </Routes>
       </Suspense>
       <Footer />

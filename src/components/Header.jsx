@@ -15,47 +15,60 @@ import {
   Typography,
   useScrollTrigger,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import logo_black from "../assets/logo-black.png";
 import Dropdown from "./Dropdown";
 import { industryItem, serviceItem } from "../misc/navItems";
-
-const navItems = [
-  {
-    name: <Dropdown name="Services" items={serviceItem} />,
-    link: "#",
-  },
-  {
-    name: "Portfolio",
-    link: "/portfolio",
-  },
-  {
-    name: <Dropdown name="Industries" items={industryItem} />,
-    link: "#",
-  },
-  {
-    name: "Blog",
-    link: "/blog",
-  },
-  {
-    name: "Why us?",
-    link: "/about-us",
-  },
-  {
-    name: "FAQs",
-    link: "/faqs",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Header = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { t, i18n } = useTranslation();
+  const [loading, setLoading] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+  const navItems = [
+    {
+      name: <Dropdown name="Services" items={serviceItem} />,
+      link: "#",
+    },
+    {
+      name: t("project"),
+      link: "/project",
+    },
+    {
+      name: <Dropdown name="Industries" items={industryItem} />,
+      link: "#",
+    },
+    {
+      name: t("blog"),
+      link: "/blog",
+    },
+    {
+      name: t("aboutUs"),
+      link: "/about-us",
+    },
+    {
+      name: t("faqs"),
+      link: "/faqs",
+    },
+  ];
+
+  const toggleLanguage = async () => {
+    setLoading(true);
+
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    const newLanguage = i18n.language === "en" ? "fr" : "en";
+    i18n.changeLanguage(newLanguage);
+
+    setLoading(false);
   };
 
   const drawer = (
@@ -70,45 +83,88 @@ const Header = (props) => {
         direction="row"
         sx={{
           display: "flex",
+          justifyContent: "space-between",
           alignItems: "center",
-          justifyContent: "start",
-          height: "100px",
-          padding: "1em",
-          cursor: "pointer",
         }}
-        component={Link}
-        to="/"
       >
-        <Typography
+        <Stack
+          direction="row"
           sx={{
-            marginLeft: ".4em",
-            fontSize: "24px",
-            fontFamily: "Carrois Gothic SC, sans-serif",
-            color: "#000",
-            textDecoration: "underline",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "start",
+            height: "100px",
+            padding: "1em",
+            cursor: "pointer",
           }}
+          component={Link}
+          to="/"
         >
-          Mahch
-        </Typography>
-        <img src={logo_black} alt="mahch logo" height="100%" />
-        <Typography
+          <img src={logo_black} alt="mahch logo" height="100%" />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              flexDirection: "column",
+              padding: ".5em",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "24px",
+                fontFamily: "Carrois Gothic SC, sans-serif",
+                color: "#000",
+                textDecoration: "underline",
+              }}
+            >
+              Mahch
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "24px",
+                fontFamily: "Carrois Gothic SC, sans-serif",
+                color: "#000",
+                textDecoration: "underline",
+              }}
+            >
+              Solution
+            </Typography>
+          </Box>
+        </Stack>
+        <Stack
+          direction="row"
           sx={{
-            marginRight: ".4em",
-            fontSize: "24px",
-            fontFamily: "Carrois Gothic SC, sans-serif",
-            color: "#000",
-            textDecoration: "underline",
+            width: { xs: "40px", sm: "48px" },
+            height: { xs: "40px", sm: "48px" },
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "50px",
+            cursor: "pointer",
+            marginRight: "1em",
+            flexShrink: "0",
           }}
+          onClick={toggleLanguage}
         >
-          Solution
-        </Typography>
+          <Typography marginRight=".5em">{t("lang")}</Typography>
+          <img src={t("lang_btn")} alt="language" width="50%" />
+        </Stack>
       </Stack>
+
       <Divider />
       <List>
         {navItems.map((item, index) => (
           <ListItem key={index}>
             <ListItemButton component={Link} to={item.link}>
-              <ListItemText primary={item.name} />
+              <ListItemText
+                sx={{
+                  "& .MuiTypography-root": {
+                    textTransform: "uppercase",
+                    fontFamily: "Staatliches, cursive",
+                  },
+                }}
+                primary={item.name}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -175,30 +231,36 @@ const Header = (props) => {
               component={Link}
               to="/"
             >
-              <Typography
-                sx={{
-                  marginLeft: ".4em",
-                  fontSize: "24px",
-                  fontFamily: "Carrois Gothic SC, sans-serif",
-                  color: "#6FD56F",
-                  textDecoration: "underline",
-                }}
-              >
-                Mahch
-              </Typography>
               <img src={logo} alt="mahch logo" height="100%" />
-
-              <Typography
+              <Box
                 sx={{
-                  marginRight: ".4em",
-                  fontSize: "24px",
-                  fontFamily: "Carrois Gothic SC, sans-serif",
-                  color: "#6FD56F",
-                  textDecoration: "underline",
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  flexDirection: "column",
+                  padding: ".5em",
                 }}
               >
-                Solution
-              </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "24px",
+                    fontFamily: "Carrois Gothic SC, sans-serif",
+                    color: "#6FD56F",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Mahch
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "24px",
+                    fontFamily: "Carrois Gothic SC, sans-serif",
+                    color: "#6FD56F",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Solution
+                </Typography>
+              </Box>
             </Stack>
             <IconButton
               color="inherit"
@@ -215,12 +277,34 @@ const Header = (props) => {
                   component={Link}
                   to={item.link}
                   key={index}
-                  sx={{ color: "#000" }}
+                  sx={{
+                    color: "#000",
+                    fontFamily: "Staatliches, cursive",
+                    textTransform: "uppercase",
+                  }}
                 >
                   {item.name}
                 </Button>
               ))}
             </Box>
+            <Stack
+              direction="row"
+              sx={{
+                width: { xs: "40px", sm: "48px" },
+                height: { xs: "40px", sm: "48px" },
+                display: { xs: "none", sm: "none", md: "flex" },
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "50px",
+                cursor: "pointer",
+                marginRight: "1em",
+                flexShrink: "0",
+              }}
+              onClick={toggleLanguage}
+            >
+              <Typography marginRight=".5em">{t("lang")}</Typography>
+              <img src={t("lang_btn")} alt="language" width="50%" />
+            </Stack>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

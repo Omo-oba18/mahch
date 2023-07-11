@@ -9,9 +9,11 @@ import build from "../assets/4137147_building_construction_industry_measurement_
 import grow from "../assets/5736348_analysis_bar_chart_grow_report_icon.png";
 import goal from "../assets/stepping_up_g6oo.png";
 import { serviceItem } from "../misc/navItems";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
-  const [buttonText, setButtonText] = useState("what is your industry?");
+  const { t } = useTranslation();
+  const [buttonText, setButtonText] = useState(t("wat_industry"));
   const [progress, setProgress] = React.useState(0);
   const [currentList, setCurrentList] = useState("industries");
   const [openButton, setOpenButton] = useState("false");
@@ -23,7 +25,7 @@ const Home = () => {
     setOpenButton(true);
   };
   const handleIndustryClick = () => {
-    setButtonText("What is your actual need?");
+    setButtonText(t("wat_ur_need"));
     setCurrentList("services");
     setProgress((prevProgress) => {
       const newProgress = prevProgress + 50;
@@ -121,7 +123,7 @@ const Home = () => {
           lineHeight={{ xs: "41px", sm: "55px" }}
           marginBottom=".4em"
         >
-          When you have the right foundation, your business will grow
+          {t("wen_u_av")}
         </Typography>
         <Typography
           fontSize={{ xs: "20px", sm: "24px" }}
@@ -130,8 +132,7 @@ const Home = () => {
           lineHeight={{ xs: "30px", sm: "35px" }}
           color="#808080"
         >
-          We combine website design and branding with the right online tools to
-          accelerate your business success
+          {t("we_comb_web")}
         </Typography>
         <Stack
           direction={{ xs: "column", sm: "column", md: "row" }}
@@ -156,17 +157,18 @@ const Home = () => {
                 lineHeight: { xs: "32px", sm: "40px" },
                 color: "#6fd56f",
                 margin: "1em 0",
+                textTransform: "capitalize",
               }}
               fontFamily="Josefin Sans, sans-serif"
             >
-              Brand
+              {t("brand")}
             </Typography>
             <Typography
               fontFamily="Josefin Sans, sans-serif"
               textAlign="center"
               lineHeight={{ xs: "32px", sm: "30px" }}
             >
-              Define your message and captivate your audience.
+              {t("brand_subtitle")}
             </Typography>
           </Stack>
           <Stack
@@ -185,18 +187,18 @@ const Home = () => {
                 lineHeight: { xs: "32px", sm: "40px" },
                 color: "#6fd56f",
                 margin: "1em 0",
+                textTransform: "capitalize",
               }}
               fontFamily="Josefin Sans, sans-serif"
             >
-              Build
+              {t("build")}
             </Typography>
             <Typography
               fontFamily="Josefin Sans, sans-serif"
               textAlign="center"
               lineHeight={{ xs: "32px", sm: "30px" }}
             >
-              Develop a world-class website, connected to the best digital
-              tools.
+              {t("build_subtitle")}
             </Typography>
           </Stack>
           <Stack
@@ -215,18 +217,18 @@ const Home = () => {
                 lineHeight: { xs: "32px", sm: "40px" },
                 color: "#6fd56f",
                 margin: "1em 0",
+                textTransform: "capitalize",
               }}
               fontFamily="Josefin Sans, sans-serif"
             >
-              Grow
+              {t("grow")}
             </Typography>
             <Typography
               fontFamily="Josefin Sans, sans-serif"
               textAlign="center"
               lineHeight={{ xs: "32px", sm: "30px" }}
             >
-              Enjoy on-going digital support and strategy with our team of
-              experts.
+              {t("grow_subtitle")}
             </Typography>
           </Stack>
         </Stack>
@@ -260,7 +262,7 @@ const Home = () => {
             marginBottom="16px"
             letterSpacing=".5px"
           >
-            See how we can help you reach your goals
+            {t("see_how_we")}
           </Typography>
           <Typography
             color="#6F8075"
@@ -271,8 +273,7 @@ const Home = () => {
             letterSpacing=".277778px"
             fontWeight={700}
           >
-            Answer two questions to help us match our expertise and software
-            solutions to your sector.
+            {t("answer_quiz_typo")}
           </Typography>
           <Typography
             variant="span"

@@ -75,8 +75,8 @@ const Carousel = (props) => {
             modules={[EffectCoverflow, Grid, Pagination]}
           >
             {props.carousel.map((item, index) => (
-              <SwiperSlide>
-                <Link to={item.link} key={index}>
+              <SwiperSlide key={index}>
+                <Link to={item.link}>
                   <img src={item.source} alt={item.text} />
                   <Typography
                     sx={{
