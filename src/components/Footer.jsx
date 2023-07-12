@@ -523,34 +523,40 @@ const Footer = () => {
             </Stack>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            {serviceItem.map((item, index) => (
-              <Typography
-                key={index}
-                sx={{
-                  fontFamily: "Staatliches, cursive",
-                  fontSize: "20px",
-                  textTransform: "uppercase",
-                  lineHeight: "1.625em",
-                }}
-              >
-                {t(item.title)}
-              </Typography>
-            ))}
+            <Stack direction="column">
+              {serviceItem.map((item, index) => (
+                <Typography
+                  key={index}
+                  sx={{
+                    fontFamily: "Staatliches, cursive",
+                    fontSize: "20px",
+                    textTransform: "uppercase",
+                    lineHeight: "1.625em",
+                  }}
+                  component={Link}
+                  to={item.link}
+                >
+                  {t(item.title)}
+                </Typography>
+              ))}
+            </Stack>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            {industryItem.map((item, index) => (
-              <Typography
-                key={index}
-                sx={{
-                  fontFamily: "Staatliches, cursive",
-                  fontSize: "20px",
-                  textTransform: "uppercase",
-                  lineHeight: "1.625em",
-                }}
-              >
-                {item.title}
-              </Typography>
-            ))}
+            <Stack direction="column">
+              {industryItem.map((item, index) => (
+                <Typography
+                  key={index}
+                  sx={{
+                    fontFamily: "Staatliches, cursive",
+                    fontSize: "20px",
+                    textTransform: "uppercase",
+                    lineHeight: "1.625em",
+                  }}
+                >
+                  {item.title}
+                </Typography>
+              ))}
+            </Stack>
           </Grid>
         </Grid>
       </Box>

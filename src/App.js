@@ -6,11 +6,10 @@ import {
   Toolbar,
   useScrollTrigger,
 } from "@mui/material";
-import { useLocation } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PropTypes from "prop-types";
 import Header from "./components/Header";
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy } from "react";
 import Footer from "./components/Footer";
 import { KeyboardArrowUp } from "@mui/icons-material";
 import Loading from "./components/Loading";

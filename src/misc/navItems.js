@@ -52,10 +52,13 @@ const serviceItem = [
 ];
 
 const industryItem = [
-  { title: "eWallet", link: "/e-wallet" },
-  { title: "Banking", link: "/banking" },
-  { title: "Real Estate", link: "/real-estate" },
-  { title: "Lending", link: "/lending" },
+  { title: "finance", link: "/e-wallet" },
+  { title: "bank", link: "/banking" },
+  { title: "real_estate", link: "/real-estate" },
+  { title: "law_firm", link: "/law-firm" },
+  { title: "hum_res", link: "/human-resources" },
+  { title: "agro", link: "/agronomy" },
+  { title: "lending", link: "/lending" },
   { title: "Donation", link: "/donation" },
 ];
 export { serviceItem, industryItem };
