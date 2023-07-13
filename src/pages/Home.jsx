@@ -8,7 +8,7 @@ import brand from "../assets/1016077_branding_pen_icon.png";
 import build from "../assets/4137147_building_construction_industry_measurement_icon.png";
 import grow from "../assets/5736348_analysis_bar_chart_grow_report_icon.png";
 import goal from "../assets/stepping_up_g6oo.png";
-import { serviceItem } from "../misc/navItems";
+import { serviceItem } from "../misc/Items";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {

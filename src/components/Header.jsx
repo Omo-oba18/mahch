@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import logo_black from "../assets/logo-black.png";
 import Dropdown from "./Dropdown";
-import { industryItem, serviceItem } from "../misc/navItems";
+import { industryItem, serviceItem } from "../misc/Items";
 import { useTranslation } from "react-i18next";
 
 const Header = (props) => {

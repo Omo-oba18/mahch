@@ -3,6 +3,8 @@ import { Stack, Typography } from "@mui/material";
 import React from "react";
 import { styled } from "styled-components";
 const SpinningSync = styled(Sync)({
+  fontSize: "48px",
+  marginBottom: "16px",
   animation: "spin 2s linear infinite",
   "@keyframes spin": {
     from: {
@@ -25,7 +27,7 @@ const Loading = () => {
         height: "100vh",
       }}
     >
-      <SpinningSync sx={{ fontSize: "48px", marginBottom: "16px" }} />
+      <SpinningSync />
       <Typography
         sx={{
           fontSize: "24px",

@@ -25,7 +25,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { industryItem, serviceItem } from "../misc/navItems";
+import { industryItem, serviceItem } from "../misc/Items";
 import ceo_image from "../assets/ceo-professional.png";
 import { useTranslation } from "react-i18next";
 import LazyImage from "./LazyLoadImage";
