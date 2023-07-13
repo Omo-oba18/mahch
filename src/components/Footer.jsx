@@ -553,7 +553,7 @@ const Footer = () => {
                     lineHeight: "1.625em",
                   }}
                 >
-                  {item.title}
+                  {t(item.title)}
                 </Typography>
               ))}
             </Stack>

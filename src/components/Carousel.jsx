@@ -8,9 +8,12 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { Grid, EffectCoverflow, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 register();
 
 const Carousel = (props) => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Stack sx={{ padding: "4em" }}>
@@ -86,9 +89,9 @@ const Carousel = (props) => {
                       lineHeight: "1.625em",
                     }}
                   >
-                    {item.title}
+                    {t(item.title)}
                   </Typography>
-                  <Typography>{item.subtitle}</Typography>
+                  <Typography>{t(item.subtitle)}</Typography>
                 </Link>
               </SwiperSlide>
             ))}
