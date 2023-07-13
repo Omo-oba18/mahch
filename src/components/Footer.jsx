@@ -222,17 +222,11 @@ const Footer = () => {
                 }}
               >
                 <LazyImage
-                  src={ceo_image}
+                  src="https://ik.imagekit.io/omobaoshoffa/mahch-solution/ceo-professional.png?updatedAt=1689282924036"
                   alt="chief-executif-officer"
                   width="100%"
                   height="100%"
                 />
-                {/* <img
-                  src={ceo_image}
-                  alt="chief-executif-officer"
-                  width="100%"
-                  height="100%"
-                /> */}
                 <Stack
                   sx={{
                     position: "absolute",

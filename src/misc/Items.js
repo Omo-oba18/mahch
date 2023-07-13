@@ -1,10 +1,3 @@
-import carousel from "../assets/consulting.jpg";
-import carousel_1 from "../assets/web-development.jpg";
-import carousel_2 from "../assets/mobile-development.jpg";
-import carousel_3 from "../assets/graphic-design.jpg";
-import carousel_4 from "../assets/devops.jpg";
-import carousel_5 from "../assets/graphic-design.jpg";
-import carousel_6 from "../assets/tutoring.jpg";
 import { ReactComponent as CustomerIcon } from "../assets/customer_satisfaction_icon.svg";
 import { ReactComponent as ContinuousLearningIcon } from "../assets/continuous_learning.svg";
 import { ReactComponent as SocialImpactIcon } from "../assets/social_impact.svg";
@@ -17,43 +10,43 @@ import {
 
 const serviceItem = [
   {
-    source: carousel,
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/consulting.jpg?updatedAt=1689284337230",
     title: "consulting",
     text: "consulting",
     link: "/consulting",
   },
   {
-    source: carousel_1,
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/web-development.jpg?updatedAt=1689283514568",
     title: "web_dev",
     text: "web_dev",
     link: "/web-development",
   },
   {
-    source: carousel_2,
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/mobile-development.jpg?updatedAt=1689284005683",
     title: "mob_dev",
     text: "mob_dev",
     link: "/mobile-development",
   },
   {
-    source: carousel_3,
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/devops.jpg?updatedAt=1689281712674",
     title: "devops",
     text: "devops",
     link: "/devops-engineering",
   },
   {
-    source: carousel_4,
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/graphic-design.jpg?updatedAt=1689284006865",
     title: "gra_design",
     text: "gra_design",
     link: "/graphic-design",
   },
   {
-    source: carousel_5,
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/ui-ux-design.png?updatedAt=1689281712778",
     title: "uix_design",
     text: "uix_design",
     link: "/uix-design",
   },
   {
-    source: carousel_6,
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/tutoring.jpg?updatedAt=1689281715141",
     title: "tutoring",
     text: "tutoring",
     link: "/tutoring",
