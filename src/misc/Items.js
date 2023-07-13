@@ -10,12 +10,6 @@ import {
 
 const serviceItem = [
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/consulting.jpg?updatedAt=1689284337230",
-    title: "consulting",
-    text: "consulting",
-    link: "/consulting",
-  },
-  {
     source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/web-development.jpg?updatedAt=1689283514568",
     title: "web_dev",
     text: "web_dev",
@@ -32,6 +26,12 @@ const serviceItem = [
     title: "devops",
     text: "devops",
     link: "/devops-engineering",
+  },
+  {
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/consulting.jpg?updatedAt=1689284337230",
+    title: "consulting",
+    text: "consulting",
+    link: "/consulting",
   },
   {
     source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/graphic-design.jpg?updatedAt=1689284006865",
