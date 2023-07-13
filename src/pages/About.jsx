@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { ReactComponent as CustomerIcon } from "../assets/customer_satisfaction_icon.svg";
 import { ReactComponent as ContinuousLearningIcon } from "../assets/continuous_learning.svg";
 import { ReactComponent as SocialImpactIcon } from "../assets/social_impact.svg";
-import { AutoFixHigh, CheckCircle, Handshake, Lightbulb } from "@mui/icons-material";
+import {
+  AutoFixHigh,
+  CheckCircle,
+  Handshake,
+  Lightbulb,
+} from "@mui/icons-material";
 
 const About = () => {
   const standFor = [
@@ -12,7 +17,7 @@ const About = () => {
       icon: <CustomerIcon />,
       style_left: { width: "22px", height: "22px", fill: "#6FD56F" },
       style_right: { width: "52px", height: "52px", fill: "#6FD56F" },
-      text: "Our clients are at the heart of our business. We listen to their needs, understand their challenges, and tailor our solutions to provide exceptional value and exceed their expectations.",
+      text: "We place our clients at the heart of everything we do. Our objective is to provide exceptional customer experiences by understanding their unique needs, challenges, and aspirations. We believe in co-creation, collaborating closely with our clients to develop tailored solutions that align with their vision and goals.",
     },
     {
       title: "Excellence",
@@ -63,7 +68,7 @@ const About = () => {
     setActive(index);
   };
   return (
-    <Stack sx={{ padding: "2em" }}>
+    <Stack>
       <Stack
         direction="column"
         sx={{
@@ -73,7 +78,7 @@ const About = () => {
       >
         <Typography
           sx={{
-            margin: "38px 0 40px",
+            margin: "58px 0 40px",
             fontSize: { xs: "32px", sm: "102px" },
             fontWeight: "700",
             textAlign: "left",
@@ -101,7 +106,7 @@ const About = () => {
           empower businesses to thrive in the digital age.
         </Typography>
       </Stack>
-      <Stack padding="2em">
+      {/* <Stack padding="2em">
         <Typography
           sx={{
             margin: "38px 0 40px",
@@ -117,7 +122,7 @@ const About = () => {
           Meet some of us
         </Typography>
         <Grid></Grid>
-      </Stack>
+      </Stack> */}
       <Stack padding="2em">
         <Typography
           sx={{
@@ -188,7 +193,7 @@ const About = () => {
                         fontSize: "32px",
                         lineHeight: "44px",
                         fontWeight: "600",
-                        textTransform:"capitalize",
+                        textTransform: "capitalize",
                         position: "relative",
                         fontFamily: "Josefin Sans, sans-serif",
                       }}
@@ -273,6 +278,64 @@ const About = () => {
             </Stack>
           ))}
         </Stack>
+      </Stack>
+      <Stack
+        direction="column"
+        sx={{ display: "flex", background: "#000", padding: "2em" }}
+      >
+        <Typography
+          sx={{
+            fontSize: { xs: "26px", sm: "60px" },
+            fontWeight: "700",
+            textAlign: "center",
+            marginBottom: "22px",
+            textTransform: "capitalize",
+            lineHeight: "1.2",
+            color: "#fff",
+            fontFamily: "Cormorant Garamond,serif",
+          }}
+        >
+          Giving back to{" "}
+          <span
+            style={{
+              fontSize: { xs: "36px", sm: "72px" },
+              color: "#6fd56f",
+              backgroundColor: "gray",
+              fontFamily: "Cormorant Upright,serif",
+            }}
+          >
+            orphan{" "}
+          </span>
+          and empowering{" "}
+          <span
+            style={{
+              fontSize: { xs: "36px", sm: "72px" },
+              color: "#6fd56f",
+              backgroundColor: "gray",
+              fontFamily: "Cormorant Upright,serif",
+            }}
+          >
+            youth
+          </span>
+        </Typography>
+        <Typography
+          sx={{
+            color:"#fff",
+            fontSize: "16px",
+            textAlign:"center",
+            lineHeight: "34px",
+            fontFamily: "Josefin Sans, sans-serif",
+          }}
+          variant="p"
+        >
+          MAHCH is deeply committed to social responsibility and believes in
+          giving back to the community. One of our objectives is to contribute
+          to orphanage organizations, supporting their mission to provide care
+          and opportunities for vulnerable children. We recognizes the importance of addressing the issue of unemployment
+          among the youth. As an objective, we are dedicated to creating
+          employment opportunities and reducing the lack of employment for young
+          individuals.
+        </Typography>
       </Stack>
     </Stack>
   );
