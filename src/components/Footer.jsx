@@ -28,6 +28,7 @@ import logo from "../assets/logo.png";
 import { industryItem, serviceItem } from "../misc/navItems";
 import ceo_image from "../assets/ceo-professional.png";
 import { useTranslation } from "react-i18next";
+import LazyImage from "./LazyLoadImage";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -220,12 +221,18 @@ const Footer = () => {
                   alignItems: "end",
                 }}
               >
-                <img
+                <LazyImage
                   src={ceo_image}
                   alt="chief-executif-officer"
                   width="100%"
                   height="100%"
                 />
+                {/* <img
+                  src={ceo_image}
+                  alt="chief-executif-officer"
+                  width="100%"
+                  height="100%"
+                /> */}
                 <Stack
                   sx={{
                     position: "absolute",

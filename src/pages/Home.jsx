@@ -35,7 +35,7 @@ const Home = () => {
 
   const handleBackButtonClick = () => {
     setCurrentList("industries");
-    setButtonText("what is your industry?");
+    setButtonText(t("wat_industry"));
     setProgress((prevProgress) => {
       const newProgress = prevProgress - 50;
       return newProgress >= 100 ? 100 : newProgress;

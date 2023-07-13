@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 
 const About = () => {
@@ -39,6 +39,39 @@ const About = () => {
           to create a meaningful difference in the world. Our team of passionate
           experts is dedicated to delivering transformative solutions that
           empower businesses to thrive in the digital age.
+        </Typography>
+      </Stack>
+      <Stack>
+      <Typography
+          sx={{
+            margin: "38px 0 40px",
+            fontSize: { xs: "24px", sm: "40px" },
+            fontWeight: "700",
+            textAlign: "left",
+            marginBottom: "23px",
+            textTransform: "capitalize",
+            lineHeight: { xs: "32px", sm: "56px" },
+            fontFamily: "Cormorant Upright,serif",
+          }}
+        >
+          Meet some of us
+        </Typography>
+        <Grid></Grid>
+      </Stack>
+      <Stack>
+      <Typography
+          sx={{
+            margin: "38px 0 40px",
+            fontSize: { xs: "24px", sm: "40px" },
+            fontWeight: "700",
+            textAlign: "left",
+            marginBottom: "23px",
+            textTransform: "capitalize",
+            lineHeight: { xs: "32px", sm: "56px" },
+            fontFamily: "Cormorant Upright,serif",
+          }}
+        >
+          What we stand for
         </Typography>
       </Stack>
     </Stack>

@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import { Grid, EffectCoverflow, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import LazyImage from "./LazyLoadImage";
 register();
 
 const Carousel = (props) => {
@@ -80,7 +81,7 @@ const Carousel = (props) => {
             {props.carousel.map((item, index) => (
               <SwiperSlide key={index}>
                 <Link to={item.link}>
-                  <img src={item.source} alt={item.text} />
+                  <LazyImage src={item.source} alt={item.text} />
                   <Typography
                     sx={{
                       fontFamily: "Staatliches, cursive",
