@@ -1,7 +1,67 @@
-import { Grid, Stack, Typography } from "@mui/material";
-import React from "react";
+import { Button, Grid, Stack, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { ReactComponent as CustomerIcon } from "../assets/customer_satisfaction_icon.svg";
+import { ReactComponent as ContinuousLearningIcon } from "../assets/continuous_learning.svg";
+import { ReactComponent as SocialImpactIcon } from "../assets/social_impact.svg";
+import { AutoFixHigh, CheckCircle, Handshake, Lightbulb } from "@mui/icons-material";
 
 const About = () => {
+  const standFor = [
+    {
+      title: "customer centricity",
+      icon: <CustomerIcon />,
+      style_left: { width: "22px", height: "22px", fill: "#6FD56F" },
+      style_right: { width: "52px", height: "52px", fill: "#6FD56F" },
+      text: "Our clients are at the heart of our business. We listen to their needs, understand their challenges, and tailor our solutions to provide exceptional value and exceed their expectations.",
+    },
+    {
+      title: "Excellence",
+      icon: <AutoFixHigh />,
+      style_left: { width: "22px", height: "22px", fill: "#6FD56F" },
+      style_right: { width: "52px", height: "52px", fill: "#6FD56F" },
+      text: "We strive for excellence in everything we do, setting high standards and continuously improving our skills, processes, and services to deliver outstanding results.",
+    },
+    {
+      title: "innovation",
+      icon: <Lightbulb />,
+      style_left: { width: "22px", height: "22px", color: "#6FD56F" },
+      style_right: { width: "52px", height: "52px", color: "#6FD56F" },
+      text: "We embrace the spirit of innovation, constantly exploring new technologies, trends, and ideas to provide creative and groundbreaking solutions to our clients.",
+    },
+    {
+      title: "Integrity",
+      icon: <CheckCircle />,
+      style_left: { width: "22px", height: "22px", color: "#6FD56F" },
+      style_right: { width: "52px", height: "52px", color: "#6FD56F" },
+      text: "We take great pride in conducting our business with honesty, transparency, and accountability. Our clients entrust us with their most ambitious projects, and we honor that trust by delivering on our promises and upholding the highest standards of ethical conduct.",
+    },
+    {
+      title: "collaboration",
+      icon: <Handshake />,
+      style_left: { width: "22px", height: "22px", color: "#6FD56F" },
+      style_right: { width: "52px", height: "52px", color: "#6FD56F" },
+      text: "We foster a culture of collaboration, both internally and with our clients, valuing teamwork, open communication, and diverse perspectives to achieve shared success.",
+    },
+    {
+      title: "Continuous learning",
+      icon: <ContinuousLearningIcon />,
+      style_left: { width: "22px", height: "22px", color: "#6FD56F" },
+      style_right: { width: "52px", height: "52px", color: "#6FD56F" },
+      text: "We promote a culture of continuous learning and professional growth, investing in our team's development to stay at the forefront of technological advancements and deliver innovative solutions.",
+    },
+    {
+      title: "Social Impact",
+      icon: <SocialImpactIcon />,
+      style_left: { width: "22px", height: "22px", color: "#6FD56F" },
+      style_right: { width: "52px", height: "52px", color: "#6FD56F" },
+      text: "We strive to make a positive impact on society and the environment by engaging in sustainable practices, supporting social causes, and giving back to our communities.",
+    },
+  ];
+  const [active, setActive] = useState(0);
+
+  const handleClick = (index) => {
+    setActive(index);
+  };
   return (
     <Stack sx={{ padding: "2em" }}>
       <Stack
@@ -41,8 +101,8 @@ const About = () => {
           empower businesses to thrive in the digital age.
         </Typography>
       </Stack>
-      <Stack>
-      <Typography
+      <Stack padding="2em">
+        <Typography
           sx={{
             margin: "38px 0 40px",
             fontSize: { xs: "24px", sm: "40px" },
@@ -58,14 +118,13 @@ const About = () => {
         </Typography>
         <Grid></Grid>
       </Stack>
-      <Stack>
-      <Typography
+      <Stack padding="2em">
+        <Typography
           sx={{
-            margin: "38px 0 40px",
-            fontSize: { xs: "24px", sm: "40px" },
+            fontSize: { xs: "34px", sm: "52px" },
             fontWeight: "700",
             textAlign: "left",
-            marginBottom: "23px",
+            marginBottom: "22px",
             textTransform: "capitalize",
             lineHeight: { xs: "32px", sm: "56px" },
             fontFamily: "Cormorant Upright,serif",
@@ -73,6 +132,147 @@ const About = () => {
         >
           What we stand for
         </Typography>
+        <Stack padding="2em" sx={{ display: { xs: "none", sm: "block" } }}>
+          <Grid container>
+            <Grid item sm={6} md={4}>
+              <Stack direction="column">
+                {standFor.map((element, index) => (
+                  <Button
+                    key={index}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                      borderRadius: "20px 0 0 20px",
+                      border: "1px solid #e7e6e6",
+                      marginBottom: "15px",
+                      padding: "16px",
+                      width: "100%",
+                      color: "#000",
+                      fontFamily: "Josefin Sans, sans-serif",
+                    }}
+                    startIcon={React.cloneElement(element.icon, {
+                      style: element.style_left,
+                    })}
+                    onClick={() => handleClick(index)}
+                  >
+                    {element.title}
+                  </Button>
+                ))}
+              </Stack>
+            </Grid>
+            <Grid item sm={6} md={8}>
+              <Stack
+                direction="column"
+                sx={{
+                  backgroundColor: "#e6f1d9",
+                  padding: "40px 60px 10px",
+                  borderRadius: "0 20px 20px 0",
+                  minHeight: "408px",
+                }}
+              >
+                {standFor.map((element, index) => (
+                  <Stack
+                    style={{
+                      display: active === index ? "block" : "none",
+                    }}
+                    key={index}
+                  >
+                    <Typography style={{ height: "52px" }}>
+                      {React.cloneElement(element.icon, {
+                        style: element.style_right,
+                      })}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: "32px",
+                        lineHeight: "44px",
+                        fontWeight: "600",
+                        textTransform:"capitalize",
+                        position: "relative",
+                        fontFamily: "Josefin Sans, sans-serif",
+                      }}
+                      variant="span"
+                    >
+                      {element.title}
+                      <span
+                        style={{
+                          position: "absolute",
+                          bottom: "-3px", // Adjust the position of the underline
+                          left: 0,
+                          width: "100%",
+                          height: "3px",
+                          backgroundColor: "#6FD56F", // Set the desired color for the underline
+                        }}
+                      ></span>
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: "20px",
+                        marginTop: "20px",
+                        fontFamily: "Josefin Sans, sans-serif",
+                      }}
+                    >
+                      {element.text}
+                    </Typography>
+                  </Stack>
+                ))}
+              </Stack>
+            </Grid>
+          </Grid>
+        </Stack>
+        <Stack sx={{ display: { xs: "block", sm: "none" } }}>
+          {standFor.map((element, index) => (
+            <Stack key={index} sx={{ padding: "20px 0" }}>
+              <Stack
+                direction="row"
+                sx={{
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <Typography>
+                  {React.cloneElement(element.icon, {
+                    style: element.style_right,
+                  })}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "26px",
+                    lineHeight: "34px",
+                    fontWeight: "600",
+                    textTransform: "capitalize",
+                    fontFamily: "Josefin Sans, sans-serif",
+                  }}
+                  variant="span"
+                >
+                  {element.title}
+                </Typography>
+                <span
+                  style={{
+                    position: "absolute",
+                    bottom: "-3px", // Adjust the position of the underline
+                    left: 0,
+                    width: "100%",
+                    height: "3px",
+                    backgroundColor: "#6FD56F", // Set the desired color for the underline
+                  }}
+                ></span>
+              </Stack>
+              <Typography
+                sx={{
+                  fontSize: "20px",
+                  lineHeight: "30px",
+                  marginTop: "20px",
+                  fontFamily: "Josefin Sans, sans-serif",
+                }}
+              >
+                {element.text}
+              </Typography>
+            </Stack>
+          ))}
+        </Stack>
       </Stack>
     </Stack>
   );
