@@ -54,6 +54,8 @@ const resources = {
         "Answer two questions to help us match our expertise and software solutions to your sector.",
       wat_industry: "What is your industry?",
       wat_ur_need: "What is your actual need?",
+      our_project: "Our projects",
+      our_project_subtitle: "Explore Our Diverse Portfolio: From Code to Creativity, We've Got Projects Covered!",
     },
   },
   fr: {
@@ -107,6 +109,9 @@ const resources = {
         "Répondez à deux questions pour nous aider à adapter notre expertise et nos solutions logicielles à votre domaine.",
       wat_industry: "Quelle est votre industrie?",
       wat_ur_need: "Quel est votre besoin réel ?",
+      our_project: "Nos Réalisation",
+      our_project_subtitle: "Découvrez Notre Portfolio Varié : Du Code à la Créativité, Tous Nos Projets Sont à l'Honneur !",
+
     },
   },
 };

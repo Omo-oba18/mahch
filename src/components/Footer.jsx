@@ -172,7 +172,7 @@ const Footer = () => {
                 sx={{ padding: "1em" }}
                 required
                 control={<Checkbox />}
-                label="I agree that my personal information will be processed and stored by Geniusee."
+                label="I agree that my personal information will be processed and stored by Mahch Solution."
               />
               <Button
                 sx={{

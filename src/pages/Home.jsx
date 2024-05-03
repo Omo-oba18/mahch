@@ -10,6 +10,7 @@ import grow from "../assets/5736348_analysis_bar_chart_grow_report_icon.png";
 import goal from "../assets/stepping_up_g6oo.png";
 import { serviceItem } from "../misc/Items";
 import { useTranslation } from "react-i18next";
+import MasonryImageList from "../components/MasonryImageList";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -232,6 +233,37 @@ const Home = () => {
             </Typography>
           </Stack>
         </Stack>
+      </Stack>
+      {/* Projects and our Gallery */}
+      <Stack
+        direction="column"
+        sx={{
+          background: "#E8E8E8",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "1em 3em",
+        }}
+      >
+        <Typography
+          fontSize={{ xs: "30px", sm: "40px" }}
+          fontFamily="Josefin Sans, sans-serif"
+          textAlign="center"
+          lineHeight={{ xs: "41px", sm: "55px" }}
+          marginBottom=".4em"
+        >
+          {t("our_project")}
+        </Typography>
+        <Typography
+          fontSize={{ xs: "20px", sm: "24px" }}
+          fontFamily="Josefin Sans, sans-serif"
+          textAlign="center"
+          lineHeight={{ xs: "30px", sm: "35px" }}
+          color="#808080"
+        >
+          {t("our_project_subtitle")}
+        </Typography>
+        <MasonryImageList />
       </Stack>
       <Stack
         direction="row"
