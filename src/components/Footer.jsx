@@ -36,7 +36,7 @@ const Footer = () => {
   const { t } = useTranslation();
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(true);
   const [isFormValid, setIsFormValid] = useState(false);
-  const publicKey = process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY;
+  const publicKey = process.env.REACT_APP_EMAIL_JS_PUBLIC;
   const serviceId = process.env.REACT_APP_EMAIL_JS_SERVICE_ID;
   const templateId = process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID;
   // email js
