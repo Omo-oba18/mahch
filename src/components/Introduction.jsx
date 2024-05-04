@@ -24,7 +24,7 @@ const Introduction = () => {
           variant="body1"
           textAlign="justify"
           component="Typography"
-          sx={{ width: "400px" }}
+          sx={{ width: "400px", padding: "0 2em" }}
         >
           Welcome to our web development services page. We specialize in
           creating modern and interactive websites using cutting-edge

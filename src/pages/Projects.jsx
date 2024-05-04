@@ -1,49 +1,55 @@
 import React from "react";
-import {
-  Typography,
-  Box,
-  Grid,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-} from "@mui/material";
+
 import dnkWebsiteLanding from "../assets/projects/dnk-landing-page.png";
 import portfolioWebsiteLanding from "../assets/projects/portfolio-website-chablis.png";
 import companyWebsiteLogin from "../assets/projects/fossil-fluid-login-page.png";
-import Project from "./Project";
+import Project from "../components/Project";
+import { Stack, Typography } from "@mui/material";
 
-const ExamplesOfWork = () => {
-  // Sample projects data
+const Projects = () => {
   const projects = [
     {
       title: "Donation website ",
       imageUrl: dnkWebsiteLanding,
       description:
-        "Donation website built from scratch with reactjs and material UI",
+        "Donation website built from scratch with React-js and Material UI",
+        pageUrl:"https://donation-dnk.vercel.app"
     },
     {
       title: "Portfolio Website",
       imageUrl: portfolioWebsiteLanding,
       description:
         "Donation website built from scratch with reactjs and material UI",
+        pageUrl:"https://portfolio-chablis.vercel.app"
+
     },
     {
       title: "Company web application",
       imageUrl: companyWebsiteLogin,
       description:
         "Donation website built from scratch with reactjs and material UI",
+        pageUrl:"https://fluidsecure.net"
     },
   ];
-
   return (
-    <Box sx={{ padding: { xs: "0", sm: "1em" } }}>
-      <Typography variant="h5" gutterBottom>
-        Projects Worked On
+    <Stack
+      direction="column"
+      sx={{
+        margin: "2em auto",
+        padding: "4em",
+        textAlign: "center",
+        // display: "flex",
+      }}
+    >
+      <Typography variant="h4" gutterBottom>
+        Our Projects
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom>
+        Check out some of the projects we've worked on.
       </Typography>
       <Project projects={projects} />
-    </Box>
+    </Stack>
   );
 };
 
-export default ExamplesOfWork;
+export default Projects;

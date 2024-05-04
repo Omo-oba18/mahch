@@ -40,7 +40,7 @@ const Header = (props) => {
     },
     {
       name: t("project"),
-      link: "/project",
+      link: "/projects",
     },
     {
       name: <Dropdown name="Industries" items={industryItem} />,

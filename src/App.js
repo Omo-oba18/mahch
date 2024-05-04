@@ -15,6 +15,7 @@ import { KeyboardArrowUp } from "@mui/icons-material";
 import Loading from "./components/Loading";
 import ScrollToTop from "./components/ScrollToTop";
 import WebDevelopment from "./pages/WebDevelopment";
+import Projects from "./pages/Projects";
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const PrivacyPolicy = lazy(() => import("./pages/PolicyPrivacy"));
@@ -69,6 +70,7 @@ function App(props) {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/web-development" element={<WebDevelopment />} />
+          <Route exact path="/projects" element={<Projects />} />
           <Route exact path="/about-us" element={<About />} />
           <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route exact path="*" element={<NotFound />} />{" "}

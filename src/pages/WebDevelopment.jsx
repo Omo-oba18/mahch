@@ -13,8 +13,6 @@ const WebDevelopment = () => {
         margin: "2em auto",
         padding: "4em",
         textAlign:"center",
-        // display: "flex",
-
       }}
     >
       <Introduction />

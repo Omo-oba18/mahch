@@ -3,7 +3,7 @@ import Banner from "../components/Banner";
 import GoalProgress from "../components/GoalProgress";
 import IndustriesButton from "../components/IndustriesButton";
 import Carousel from "../components/Carousel";
-import { Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import brand from "../assets/1016077_branding_pen_icon.png";
 import build from "../assets/4137147_building_construction_industry_measurement_icon.png";
 import grow from "../assets/5736348_analysis_bar_chart_grow_report_icon.png";
@@ -11,6 +11,8 @@ import goal from "../assets/stepping_up_g6oo.png";
 import { serviceItem } from "../misc/Items";
 import { useTranslation } from "react-i18next";
 import MasonryImageList from "../components/MasonryImageList";
+import ArrowRightIcon from "@mui/icons-material/ArrowRightOutlined";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -264,6 +266,24 @@ const Home = () => {
           {t("our_project_subtitle")}
         </Typography>
         <MasonryImageList />
+        <Button
+          component={Link}
+          to="/projects"
+          variant="outlined"
+          endIcon={<ArrowRightIcon />}
+          sx={{
+            background: "#6FD56F",
+            color: "#fff",
+            border: "none",
+            "&:hover": {
+              background: "#fff",
+              color: "#6fd56f",
+              border: "none",
+            },
+          }}
+        >
+          View more{" "}
+        </Button>
       </Stack>
       <Stack
         direction="row"

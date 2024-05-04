@@ -20,7 +20,7 @@ const OurApproach = () => {
         <Box
           textAlign="justify"
           component="Typography"
-          sx={{ width: "400px" }}
+          sx={{ width: "400px", padding: "0 2em" }}
           variant="body1"
         >
           At MAHCH Solution Company, we believe in a customer-centric approach

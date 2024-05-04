@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Typography,
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  Chip,
-  Avatar,
-  Stack,
-} from "@mui/material";
+import { Typography, Box, Chip, Avatar, Stack } from "@mui/material";
 import reactjsSvg from "../assets/svgs/react-js.svg";
 import materialUISvg from "../assets/svgs/material-ui.svg";
 import html5IconSvg from "../assets/svgs/html-5.svg";
@@ -45,7 +36,7 @@ const TechnologiesUsed = () => {
   return (
     <Box
       sx={{
-        padding: "2em",
+        padding: { xs: "0", sm: "2em" },
       }}
     >
       <Typography variant="h5" gutterBottom>
@@ -58,7 +49,7 @@ const TechnologiesUsed = () => {
           justifyContent: "center",
           alignItems: "center",
           margin: "2em",
-          flexWrap:"wrap"
+          flexWrap: "wrap",
         }}
       >
         {technologies.map((tech, index) => (

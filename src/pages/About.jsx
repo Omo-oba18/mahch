@@ -1,16 +1,15 @@
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { standFor } from "../misc/Items"
+import { standFor } from "../misc/Items";
 
 const About = () => {
-  
   const [active, setActive] = useState(0);
 
   const handleClick = (index) => {
     setActive(index);
   };
   return (
-    <Stack>
+    <Stack sx={{padding:"2em"}}>
       <Stack
         direction="column"
         sx={{
@@ -23,7 +22,7 @@ const About = () => {
             margin: "58px 0 40px",
             fontSize: { xs: "32px", sm: "102px" },
             fontWeight: "700",
-            textAlign: "left",
+            textAlign: "center",
             marginBottom: "23px",
             textTransform: "capitalize",
             lineHeight: { xs: "1", sm: "102px" },
@@ -37,6 +36,7 @@ const About = () => {
             fontFamily: "Josefin Sans, sans-serif",
             fontSize: { xs: "16px", sm: "32px", md: "32px" },
             lineHeight: { xs: "1.5", sm: "1.37", md: "32px" },
+            textAlign: "justify",
           }}
         >
           MAHCH SOLUTION is not just an ordinary IT services company; it is a
@@ -70,7 +70,7 @@ const About = () => {
           sx={{
             fontSize: { xs: "34px", sm: "52px" },
             fontWeight: "700",
-            textAlign: "left",
+            textAlign: "center",
             marginBottom: "22px",
             textTransform: "capitalize",
             lineHeight: { xs: "32px", sm: "56px" },
@@ -262,9 +262,9 @@ const About = () => {
         </Typography>
         <Typography
           sx={{
-            color:"#fff",
+            color: "#fff",
             fontSize: "16px",
-            textAlign:"center",
+            textAlign: "center",
             lineHeight: "34px",
             fontFamily: "Josefin Sans, sans-serif",
           }}
@@ -273,10 +273,10 @@ const About = () => {
           MAHCH is deeply committed to social responsibility and believes in
           giving back to the community. One of our objectives is to contribute
           to orphanage organizations, supporting their mission to provide care
-          and opportunities for vulnerable children. We recognizes the importance of addressing the issue of unemployment
-          among the youth. As an objective, we are dedicated to creating
-          employment opportunities and reducing the lack of employment for young
-          individuals.
+          and opportunities for vulnerable children. We recognizes the
+          importance of addressing the issue of unemployment among the youth. As
+          an objective, we are dedicated to creating employment opportunities
+          and reducing the lack of employment for young individuals.
         </Typography>
       </Stack>
     </Stack>
