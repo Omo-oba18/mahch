@@ -16,6 +16,12 @@ const serviceItem = [
     link: "/web-development",
   },
   {
+    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/web-development.jpg?updatedAt=1689283514568",
+    title: "script_dev",
+    text: "script_dev",
+    link: "/script-implementation",
+  },
+  {
     source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/mobile-development.jpg?updatedAt=1689284005683",
     title: "mob_dev",
     text: "mob_dev",
