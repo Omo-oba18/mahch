@@ -7,52 +7,60 @@ import {
   Handshake,
   Lightbulb,
 } from "@mui/icons-material";
+import devOpsImage from '../assets/devops.jpg'
+import consultingImage from '../assets/consulting.jpg'
+import webDevImage from '../assets/web-development.jpg'
+import mobDevImage from '../assets/mobile-development.jpg'
+import graphDesignImage from '../assets/graphic-design.jpg'
+import uixDesignImage from '../assets/ui-ux-design.png'
+import tutoringImage from '../assets/tutoring.jpg'
+import scriptImage from '../assets/code-python-script.png'
 
 const serviceItem = [
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/web-development.jpg?updatedAt=1689283514568",
+    source: webDevImage,
     title: "web_dev",
     text: "web_dev",
     link: "/web-development",
   },
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/web-development.jpg?updatedAt=1689283514568",
+    source: scriptImage,
     title: "script_dev",
     text: "script_dev",
     link: "/script-implementation",
   },
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/mobile-development.jpg?updatedAt=1689284005683",
+    source: mobDevImage,
     title: "mob_dev",
     text: "mob_dev",
     link: "/mobile-development",
   },
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/devops.jpg?updatedAt=1689281712674",
+    source: devOpsImage,
     title: "devops",
     text: "devops",
     link: "/devops-engineering",
   },
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/consulting.jpg?updatedAt=1689284337230",
+    source: consultingImage,
     title: "consulting",
     text: "consulting",
     link: "/consulting",
   },
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/graphic-design.jpg?updatedAt=1689284006865",
+    source: graphDesignImage,
     title: "gra_design",
     text: "gra_design",
     link: "/graphic-design",
   },
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/ui-ux-design.png?updatedAt=1689281712778",
+    source: uixDesignImage,
     title: "uix_design",
     text: "uix_design",
     link: "/uix-design",
   },
   {
-    source: "https://ik.imagekit.io/omobaoshoffa/mahch-solution/tutoring.jpg?updatedAt=1689281715141",
+    source: tutoringImage,
     title: "tutoring",
     text: "tutoring",
     link: "/tutoring",
