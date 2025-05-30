@@ -323,7 +323,7 @@ const Footer = () => {
                   }}
                 >
                   <LazyImage
-                    src="https://ik.imagekit.io/omobaoshoffa/mahch-solution/ceo-professional.png?updatedAt=1689282924036"
+                    src="https://ik.imagekit.io/omobaoshoffa/mahch-solution/chablis-mahutin.jpeg?updatedAt=1748600293892"
                     alt="chief-executif-officer"
                     width="100%"
                     height="100%"
