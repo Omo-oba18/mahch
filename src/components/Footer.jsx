@@ -300,10 +300,6 @@ const Footer = () => {
               <Stack
                 direction="column"
                 sx={{
-                  background:
-                    "url('https://ik.imagekit.io/k0jemnbco/Main_Page_New/Frame_2317502.webp')",
-                  // background: `url("${bg_ceo}")`,
-                  backgroundColor: "#EEEDEF",
                   backgroundSize: { xs: "100%", sm: "cover" },
                   justifyContent: "center",
                   display: "flex",
